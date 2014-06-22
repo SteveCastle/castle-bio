@@ -5,7 +5,7 @@
  * @name castleBioApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the castleBioApp
+ * Resume and work history.
  */
 angular.module('castleBioApp')
   .controller('AboutCtrl', function ($scope) {

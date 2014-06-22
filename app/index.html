@@ -11,6 +11,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:200italic,200,300italic,300,400italic,400,600italic,600,700italic,700,900italic,900" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -20,21 +21,18 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <console></console>
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+        <ul class="nav">
+          <li class="active"><a ng-href="#">root</a></li>
+          <li><a ng-href="#/about">/home/steveCastle/.config</a></li>
+          <li><a ng-href="#/skills">/usr/</a></li>
+          <li><a ng-href="#/blog">/var/blog</a></li>
+          <li><a ng-href="#/works">/home/steveCastle/projects</a></li>
         </ul>
-        <h3 class="text-muted">castleBio</h3>
       </div>
-
-      <div ng-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+      <div ng-view="" id="content"></div>
     </div>
 
 
@@ -63,6 +61,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/threejs/build/three.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -70,6 +69,12 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/skills.js"></script>
+        <script src="scripts/controllers/works.js"></script>
+        <script src="scripts/controllers/blog.js"></script>
+        <script src="scripts/directives/world.js"></script>
+        <script src="scripts/services/worldloader.js"></script>
+        <script src="scripts/directives/console.js"></script>
         <!-- endbuild -->
 </body>
 </html>

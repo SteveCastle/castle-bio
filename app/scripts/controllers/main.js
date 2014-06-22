@@ -5,7 +5,7 @@
  * @name castleBioApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the castleBioApp
+ * Root screen of Steve Castle's online resume. Features prominent content from other areas.
  */
 angular.module('castleBioApp')
   .controller('MainCtrl', function ($scope) {
