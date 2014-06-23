@@ -32,7 +32,9 @@
           <li><a ng-href="#/works">/home/steveCastle/projects</a></li>
         </ul>
       </div>
-      <div ng-view="" id="content"></div>
+      <div ng-view="" id="content">
+      </div>
+      <div world id="worldViewer"></div>
     </div>
 
 
@@ -64,7 +66,18 @@
     <script src="bower_components/threejs/build/three.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <script src="scripts/threejs_components/three.min.js"></script>
+  <script src="scripts/threejs_components/loaders/OBJLoader.js"></script>
+  <script src="scripts/threejs_components/shaders/CopyShader.js"></script>
+  <script src="scripts/threejs_components/shaders/ColorifyShader.js"></script>
+  <script src="scripts/threejs_components/shaders/RGBShiftShader.js"></script>
+  <script src="scripts/threejs_components/shaders/CopyShader.js"></script>
+  <script src="scripts/threejs_components/shaders/ConvolutionShader.js"></script>
+  <script src="scripts/threejs_components/postprocessing/BloomPass.js"></script> 
+  <script src="scripts/threejs_components/postprocessing/EffectComposer.js"></script>
+  <script src="scripts/threejs_components/postprocessing/RenderPass.js"></script>
+  <script src="scripts/threejs_components/postprocessing/MaskPass.js"></script>
+  <script src="scripts/threejs_components/postprocessing/ShaderPass.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>

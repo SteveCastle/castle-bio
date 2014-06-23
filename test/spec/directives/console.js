@@ -15,6 +15,6 @@ describe('Directive: console', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<console></console>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the console directive');
+    expect(element.text()).toBe('steve@castle.net : ~$');
   }));
 });

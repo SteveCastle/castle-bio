@@ -9,5 +9,5 @@
  */
 angular.module('castleBioApp')
   .service('Worldloader', function Worldloader() {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+
+});

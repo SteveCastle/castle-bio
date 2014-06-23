@@ -9,11 +9,21 @@
 angular.module('castleBioApp')
   .directive('console', function () {
     return {
-      template: '<div></div>',
+      template: '<div ng-keydown="processKeyPress($event)" tabindex="0" class="command"><span class="prompt">steve.castle@wintermute&gt;&nbsp; {{command}}</span><span class="cursor">&nbsp;</span></div>',
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('steve@castle.net : ~$');
-        console.log(attrs);
+      scope: {},
+      controller: function ($scope) {
+        $scope.command = '';
+
+        $scope.processKeyPress = function($event){
+          if($event.keyCode === 13){
+            $scope.command = '';
+            return false;
+          }
+          $scope.command = $scope.command + String.fromCharCode($event.keyCode);
+          console.log($event);
+          console.log($scope);
+        };
       }
     };
   });
