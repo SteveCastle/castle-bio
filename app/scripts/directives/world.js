@@ -11,7 +11,7 @@ angular.module('castleBioApp')
     return {
       restrict: 'A',
       scope: true,
-      controller: function ($scope, $element, $attrs) {
+      controller: function ($scope, $element) {
         var camera, scene, renderer, composer, world;
         var mouseX = 0, mouseY = 0;
         var windowHalfX = window.innerWidth / 2;

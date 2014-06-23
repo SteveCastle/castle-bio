@@ -35,7 +35,11 @@ ul.nav li{
 
 #content{
   display:block;
-  width:100%;
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+  border: 1px solid green;
+  padding: 20px;
 
 }
 #worldViewer{

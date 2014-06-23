@@ -10,8 +10,8 @@
 angular.module('castleBioApp')
   .controller('WorksCtrl', function ($scope) {
     $scope.works =[
-        {'title': 'DRSS Corporate Dashboard'},
-        {'title': 'Sales CRM'},
-        {'title': 'Signal Viz'}
+        {'title': 'DRSS Corporate Dashboard','category': 'enterprise' ,'description': 'Description goes here.', 'url': 'url goes here', 'imgUrl': '/img/placeholder.jpg'},
+        {'title': 'DRSS Marketing Sites','category': 'Marketing' ,'description': 'Description goes here.', 'url': 'url goes here', 'imgUrl': '/img/placeholder.jpg'},
+        {'title': 'Flight Board Simulator','category': 'Experimental' ,'description': 'Description goes here.', 'url': 'url goes here', 'imgUrl': '/img/placeholder.jpg'}
       ];
   });

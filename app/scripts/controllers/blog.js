@@ -9,9 +9,7 @@
  */
 angular.module('castleBioApp')
   .controller('BlogCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.blogs = [
+        {'title': 'Blog Item 1', 'body': 'Body'}
+      ];
   });
