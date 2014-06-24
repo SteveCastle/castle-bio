@@ -3,12 +3,16 @@
   text-shadow: 0 0 3px rgba(0,100,0,.5);
 }
 
-.prompt, .cursor, .command  {
+.prompt, .cursor  {
   font-family: FreeMono, monospace;
-  outline: none;
   font-size: 12px;
   line-height: 14px;
   font-weight: bold;
+}
+
+.command{
+  padding:20px;
+  outline: none;
 }
 
 .cursor {

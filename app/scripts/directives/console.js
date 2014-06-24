@@ -7,16 +7,18 @@
  * # console
  */
 angular.module('castleBioApp')
-  .directive('console', function () {
+  .directive('console', ['$location',function () {
     return {
       template: '<div ng-keydown="processKeyPress($event)" tabindex="0" class="command"><span class="prompt">steve.castle@wintermute&gt;&nbsp; {{command}}</span><span class="cursor">&nbsp;</span></div>',
       restrict: 'E',
       scope: {},
-      controller: function ($scope) {
+      controller: function ($scope, $location) {
         $scope.command = '';
 
         $scope.processKeyPress = function($event){
           if($event.keyCode === 13){
+            $location.path('/' + $scope.command);
+            console.log($location.path());
             $scope.command = '';
             return false;
           }
@@ -26,4 +28,4 @@ angular.module('castleBioApp')
         };
       }
     };
-  });
+  }]);
