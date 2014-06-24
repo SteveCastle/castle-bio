@@ -17,14 +17,12 @@ angular.module('castleBioApp')
 
         $scope.processKeyPress = function($event){
           if($event.keyCode === 13){
-            $location.path('/' + $scope.command);
+            $location.url('/' + $scope.command);
             console.log($location.path());
             $scope.command = '';
             return false;
           }
           $scope.command = $scope.command + String.fromCharCode($event.keyCode);
-          console.log($event);
-          console.log($scope);
         };
       }
     };
