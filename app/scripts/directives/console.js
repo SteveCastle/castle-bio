@@ -9,7 +9,7 @@
 angular.module('castleBioApp')
   .directive('console', ['$location',function () {
     return {
-      template: '<div ng-keydown="processKeyPress($event)" tabindex="0" class="command"><span class="prompt">steve.castle@wintermute&gt;&nbsp; {{command}}</span><span class="cursor">&nbsp;</span></div>',
+      template: '<div ng-keypress="processKeyPress($event)" tabindex="0" class="command"><span class="prompt">steve.castle@wintermute&gt;&nbsp; {{command}}</span><span class="cursor">&nbsp;</span></div>',
       restrict: 'E',
       scope: {},
       controller: function ($scope, $location) {
@@ -22,7 +22,8 @@ angular.module('castleBioApp')
             $scope.command = '';
             return false;
           }
-          $scope.command = $scope.command + String.fromCharCode($event.keyCode);
+          $scope.command = $scope.command + String.fromCharCode($event.charCode).toLowerCase();
+          console.log($event);
         };
       }
     };
