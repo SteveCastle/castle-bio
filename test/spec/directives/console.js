@@ -12,9 +12,9 @@ describe('Directive: console', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('Should Create a typeable console element', inject(function ($compile) {
     element = angular.element('<console></console>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('steve@castle.net : ~$');
+    expect(element.html()).toMatch(/div/i);
   }));
 });

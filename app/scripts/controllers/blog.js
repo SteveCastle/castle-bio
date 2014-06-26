@@ -5,7 +5,7 @@
  * @name castleBioApp.controller:BlogCtrl
  * @description
  * # BlogCtrl
- * Controller of the castleBioApp
+ * Displays listing of blog features.
  */
 angular.module('castleBioApp')
   .controller('BlogCtrl', function ($scope) {

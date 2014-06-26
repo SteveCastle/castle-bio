@@ -4,6 +4,7 @@
  * @ngdoc directive
  * @name castleBioApp.directive:world
  * @description
+ * @scope
  * # world
  */
 angular.module('castleBioApp')
@@ -33,7 +34,7 @@ angular.module('castleBioApp')
         };
         var texture = new THREE.Texture();
         var loader = new THREE.ImageLoader( manager );
-        loader.load( 'textures/weird.jpg', function ( image ) {
+        loader.load( 'images/weird.jpg', function ( image ) {
           texture.image = image;
           texture.needsUpdate = true;
         } );
@@ -98,8 +99,8 @@ angular.module('castleBioApp')
         }
 
         function render() {
-          camera.position.x += ( mouseX - camera.position.x ) * .005;
-          camera.position.y += ( - mouseY - camera.position.y ) * .005;
+          camera.position.x += ( mouseX - camera.position.x ) * 0.005;
+          camera.position.y += ( - mouseY - camera.position.y ) * 0.005;
           camera.lookAt( scene.position );
           composer.render();
         }

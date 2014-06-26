@@ -5,7 +5,7 @@
  * @name castleBioApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Resume and work history.
+ * Displays work and education history.
  */
 angular.module('castleBioApp')
   .controller('AboutCtrl', function ($scope) {

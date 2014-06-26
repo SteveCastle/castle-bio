@@ -3,6 +3,8 @@
 /**
  * @ngdoc directive
  * @name castleBioApp.directive:console
+   @restrict E
+   @scope
  * @description
  * # console
  */

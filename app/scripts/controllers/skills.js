@@ -5,7 +5,7 @@
  * @name castleBioApp.controller:SkillsCtrl
  * @description
  * # SkillsCtrl
- * Controller of the castleBioApp
+ * Controller to display skills ranked by experience level.
  */
 angular.module('castleBioApp')
   .controller('SkillsCtrl', function ($scope) {

@@ -5,8 +5,8 @@
  * @name castleBioApp
  * @description
  * # castleBioApp
- *
- * Main module of the application.
+ * 
+ * These docs exist mainly just for fun and exploring the grunt-ngdocs workflow. Since this personal resume is a fairly simple application that is unlikely to be reused by anyone you are quite possibly one of the only people to ever read this.
  */
 angular
   .module('castleBioApp', [

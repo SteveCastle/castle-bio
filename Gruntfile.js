@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
-
+  grunt.loadNpmTasks('grunt-ngdocs');
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -109,7 +109,12 @@ module.exports = function (grunt) {
         }
       }
     },
-
+    ngdocs: {
+      options: {
+        title: 'Castle Docs'
+      },
+      all : ['app/scripts/**/*.js']
+    },
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
@@ -119,7 +124,8 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '!<%= yeoman.app %>/scripts/{,threejs_components/}*.js',
         ]
       },
       test: {
