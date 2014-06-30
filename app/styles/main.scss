@@ -1,9 +1,15 @@
 // bower:scss
 // endbower
-@import "compass/reset";
 @import "_cursor";
 @import "_monokai";
+@import "compass/typography/vertical_rhythm";
+
 $displayGreen: green;
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+@include establish-baseline;
+
 
 .browsehappy {
   margin: 0.2em 0;
@@ -23,7 +29,7 @@ body {
 a{
   color:white;
 }
-
+/* Menu List */
 ul.nav{
   width:100%;
   height:60px;
@@ -36,15 +42,31 @@ ul.nav{
   }
 }
 
+/* Grid Shapes*/
+.container{
+  min-width:960px;
+}
+.title{
+width: 636px;
+height: 152px;
+background-image: url('/images/title.gif')
+}
+.thin{
+  width:200px;
+}
+
+.wide{
+  width:500px;
+}
+/* Window Manager and Windows */
 .contentWrapper{
   padding:50px;
 }
 
 .contentWindow{
   display:block;
-  width:30%;
   border: 1px dotted $displayGreen;
- h1{
+ h2{
     display:block;
     text-align:center;
     border-bottom: 1px dashed $displayGreen;
@@ -53,14 +75,14 @@ ul.nav{
     top:0px;
  }
  img{
-  width:100%;
  }
  .wrapper{
-  padding: 5px;
-  font-size: small;
+  margin: 15px 15px 15px 15px;
  }
 }
-
+.translucent{
+  opacity:.7;
+}
 #worldViewer{
   top:0;
   left:0;

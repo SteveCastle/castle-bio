@@ -11,9 +11,9 @@ angular.module('castleBioApp')
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
-				console.log(scope);
+				console.log(attrs);
 				if (scope.packery === null || scope.packery === undefined){
-				  scope.packery = new Packery(element[0].parentElement, {columnWidth: '.contentWindow', gutter: 100, isResizeBound: true});
+				  scope.packery = new Packery(element[0].parentElement, {columnWidth: 100, gutter: 50, isResizeBound: true});
 				}
 			  scope.packery.layout();
 			  window.packery = scope.packery;

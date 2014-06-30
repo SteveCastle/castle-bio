@@ -17,6 +17,6 @@ describe('Controller: BlogCtrl', function () {
   }));
 
   it('should attach a list of blog items to the scope', function () {
-    expect(scope.blogs.length).toBe(1);
+    expect(scope.blogs.length).toBe(0);
   });
 });
