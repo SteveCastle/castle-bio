@@ -1,5 +1,4 @@
-<h1>work</h1>
-
-<ul>
-  <li ng-repeat="work in works">{{work.title}}</li>
-</ul>
+<div ng-repeat="work in works" class="contentWindow" ng-packery>
+	<h1>{{work.title}}</h1>
+	<p>{{work.description}}</p>
+</div>

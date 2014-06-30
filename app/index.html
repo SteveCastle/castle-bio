@@ -26,16 +26,14 @@
       <div class="header">
         <ul class="nav">
           <li class="active"><a ng-href="#">root</a></li>
-          <li><a ng-href="#/about">/home/steveCastle/experience</a></li>
           <li><a ng-href="#/skills">/usr/skills</a></li>
           <li><a ng-href="#/blog">/var/blog</a></li>
           <li><a ng-href="#/works">/home/steveCastle/projects</a></li>
           <li class="seperator">|</li>
            <li><a ng-href="https://github.com/SteveCastle" target="_blank">/mnt/github</a></li>
            <li><a ng-href="https://www.linkedin.com/pub/stephen-castle/42/a70/4b9" target="_blank">/mnt/linkedIn</a></li>
-           <li><a ng-href="#">/mnt/facebook</a></li>
       </div>
-      <div ng-view="" id="content">
+      <div ng-view="" class="contentWrapper">
       </div>
       <div world id="worldViewer"></div>
     </div>
@@ -60,7 +58,6 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -68,9 +65,22 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/threejs/build/three.js"></script>
+    <script src="bower_components/classie/classie.js"></script>
+    <script src="bower_components/get-style-property/get-style-property.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/eventie/eventie.js"></script>
+    <script src="bower_components/doc-ready/doc-ready.js"></script>
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="bower_components/matches-selector/matches-selector.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/outlayer.js"></script>
+    <script src="bower_components/packery/js/rect.js"></script>
+    <script src="bower_components/packery/js/packer.js"></script>
+    <script src="bower_components/packery/js/item.js"></script>
+    <script src="bower_components/packery/js/packery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:js(.) scripts/three.js -->
     <script src="scripts/threejs_components/three.min.js"></script>
   <script src="scripts/threejs_components/loaders/OBJLoader.js"></script>
   <script src="scripts/threejs_components/shaders/CopyShader.js"></script>
@@ -83,7 +93,6 @@
   <script src="scripts/threejs_components/postprocessing/RenderPass.js"></script>
   <script src="scripts/threejs_components/postprocessing/MaskPass.js"></script>
   <script src="scripts/threejs_components/postprocessing/ShaderPass.js"></script>
-  <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
@@ -94,6 +103,7 @@
         <script src="scripts/directives/world.js"></script>
         <script src="scripts/services/worldloader.js"></script>
         <script src="scripts/directives/console.js"></script>
+        <script src="scripts/directives/ngpackery.js"></script>
         <!-- endbuild -->
 </body>
 </html>

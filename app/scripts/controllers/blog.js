@@ -10,6 +10,6 @@
 angular.module('castleBioApp')
   .controller('BlogCtrl', function ($scope) {
     $scope.blogs = [
-        {'title': 'Blog Item 1', 'body': 'Body'}
+        {'title': 'Blog Item 1', 'preview': 'This is a placeholder blog article.'}
       ];
   });

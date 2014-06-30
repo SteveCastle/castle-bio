@@ -36,10 +36,13 @@ ul.nav{
   }
 }
 
-#content{
+.contentWrapper{
+  padding:50px;
+}
+
+.contentWindow{
   display:block;
   width:30%;
-  margin-top:50px;
   border: 1px dotted $displayGreen;
  h1{
     display:block;
@@ -52,7 +55,12 @@ ul.nav{
  img{
   width:100%;
  }
+ .wrapper{
+  padding: 5px;
+  font-size: small;
+ }
 }
+
 #worldViewer{
   top:0;
   left:0;

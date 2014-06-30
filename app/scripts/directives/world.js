@@ -70,9 +70,6 @@ angular.module('castleBioApp')
         composer.addPass( effect );
 
         console.log(renderer);
-        console.log($scope);
-        console.log($element);
-
         function onWindowResize() {
           windowHalfX = window.innerWidth / 2;
           windowHalfY = window.innerHeight / 2;
