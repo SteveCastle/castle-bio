@@ -2,6 +2,7 @@
 // endbower
 @import "_cursor";
 @import "_monokai";
+@import "_animations";
 @import "compass/typography/vertical_rhythm";
 
 $displayGreen: green;
@@ -19,10 +20,12 @@ $base-line-height: 24px;
 }
 
 /* Space out content a bit */
+html,body{padding:0;margin:0;}
 body {
   background-color: #49483e;
   color:white;
-  overflow:hidden;
+  overflow-y:auto;
+  overflow-x:hidden;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -69,8 +72,9 @@ background-image: url('/images/title.gif')
  h2{
     display:block;
     text-align:center;
+    padding-bottom:10px;
     border-bottom: 1px dashed $displayGreen;
-    color: $displayGreen;
+    color: #A6E22E;
     left:0px;
     top:0px;
  }
@@ -87,7 +91,7 @@ background-image: url('/images/title.gif')
   top:0;
   left:0;
   z-index:-1;
-  position:absolute;
+  position:fixed;
   width:100%;
   height:100%;
 }

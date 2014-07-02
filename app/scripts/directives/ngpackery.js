@@ -7,7 +7,7 @@
  * # ngPackery
  */
 angular.module('castleBioApp')
-  .directive('ngPackery', ['$rootScope', function() {
+  .directive('ngPackery', ['$timeout', function($timeout) {
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
@@ -15,8 +15,7 @@ angular.module('castleBioApp')
 				if (scope.packery === null || scope.packery === undefined){
 				  scope.packery = new Packery(element[0].parentElement, {columnWidth: 100, gutter: 50, isResizeBound: true});
 				}
-			  scope.packery.layout();
-			  window.packery = scope.packery;
+			  $timeout(function(){scope.packery.layout();},1);
 		  }
   };
     
