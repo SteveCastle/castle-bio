@@ -17,6 +17,6 @@ describe('Controller: WorksCtrl', function () {
   }));
 
   it('should attach a list of works to the scope', function () {
-    expect(scope.works.length).toBe(3);
+    expect(scope.works.length).toBe(5);
   });
 });

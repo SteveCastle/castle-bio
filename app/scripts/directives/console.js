@@ -9,24 +9,39 @@
  * # console
  */
 angular.module('castleBioApp')
-  .directive('console', ['$location',function () {
-    return {
-      template: '<div ng-keypress="processKeyPress($event)" tabindex="0" class="command"><h1><span class="prompt">steve.castle@wintermute&gt;&nbsp;{{command}}</span><span class="cursor">&nbsp;</span></h1></div>',
-      restrict: 'E',
-      scope: {},
-      controller: function ($scope, $location) {
-        $scope.command = '';
-
-        $scope.processKeyPress = function($event){
-          if($event.keyCode === 13){
-            $location.url('/' + $scope.command);
-            console.log($location.path());
-            $scope.command = '';
-            return false;
-          }
-          $scope.command = $scope.command + String.fromCharCode($event.charCode).toLowerCase();
+ .directive('console', ['$rootScope',function ($rootScope) {
+  return {
+    templateUrl:'/views/partials/console.html',
+    restrict: 'E',
+    scope: {},
+    controller: function ($scope, $location) {
+      $scope.command='';
+      $scope.processKeyPress = function($event){
+        if($event.keyCode === 13){
+          $location.url('/' + $scope.command);
+          console.log($location.path());
+          $scope.command = '';
+          return false;
+        }
+        else if($event.keyCode === 46 || $event.keyCode === 8){
+          $scope.command = $scope.command.slice(0, - 1);
+        }
+        else{
+          $scope.command = $scope.command + String.fromCharCode($event.keyCode).toLowerCase();
           console.log($event);
-        };
-      }
-    };
-  }]);
+        }
+
+      };
+
+      $scope.processCommand = function(){
+
+      };
+      $rootScope.$watch('broadcast', function(newValue, oldValue) {
+        if(newValue !== undefined){
+          $scope.command = newValue;
+          console.log('New Value: ' + newValue + ' Old Value: '  + oldValue);
+        }
+      });
+    }
+  };
+}]);

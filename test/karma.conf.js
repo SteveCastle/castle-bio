@@ -28,7 +28,7 @@ module.exports = function(config) {
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js',
-      {pattern: 'app/textures/weird.jpg', included: false, served: true}
+      {pattern: 'app/images/weird.jpg', included: false, served: true}
     ],
 
     // list of files / patterns to exclude

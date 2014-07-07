@@ -8,10 +8,10 @@
  * # world
  */
 angular.module('castleBioApp')
-  .directive('world', function () {
+  .directive('world', ['$rootScope', function ($rootScope) {
     return {
       restrict: 'A',
-      scope: {geoColor:'@'},
+      scope: {geoColor:'='},
       controller: function ($scope, $element) {
         var camera, scene, renderer, composer, world, ambient, directionalLight, effect;
         var mouseX = 0, mouseY = 0;
@@ -21,10 +21,20 @@ angular.module('castleBioApp')
         var lightingColor = new THREE.Color($scope.geoColor);
         console.log($scope.geoColor);
 
-        $scope.changeColor = function(){
-          
-        };
-        
+        $scope.$watch('geoColor', function(newValue, oldValue) {
+          if(newValue !== undefined){
+            directionalLight.color.setHex( 0x444444 );
+            console.log('New Value: ' + newValue + ' Old Value: '  + oldValue);
+          }
+        });
+
+        $rootScope.$watch('world', function(newValue, oldValue) {
+          if(newValue !== undefined){
+            $scope.loadWorld(newValue);
+            console.log('New Value: ' + newValue + ' Old Value: '  + oldValue);
+          }
+        });
+
         $scope.moveCamera = function(x,y,z){
             camera.position.z = x;
             camera.position.y = y;
@@ -32,7 +42,14 @@ angular.module('castleBioApp')
           };
 
 
-        $scope.loadWorld = function(){
+        $scope.loadWorld = function(objUrl){
+//Clear World and Reset Camera
+          console.log(world);
+          camera.position.z = 400;
+          camera.position.y = 800;
+          camera.position.x = -800;
+          scene.remove(world);
+//Initialize Texture Loader
           var manager = new THREE.LoadingManager();
           var texture = new THREE.Texture();
           var loader = new THREE.ImageLoader( manager );
@@ -40,8 +57,9 @@ angular.module('castleBioApp')
             texture.image = image;
             texture.needsUpdate = true;
           } );
+//Initialize Object Loader
           loader = new THREE.OBJLoader( manager );
-          loader.load( 'obj/land.obj', function ( object ) {
+          loader.load( 'obj/'+ objUrl +'.obj', function ( object ) {
             object.traverse( function ( child ) {
               if ( child instanceof THREE.Mesh ) {
                 child.material.map = texture;
@@ -70,7 +88,7 @@ angular.module('castleBioApp')
         scene.add( directionalLight, 1 );
         directionalLight.position.set( 0, 0, 1 ).normalize();
 //Load Geometry and Textures
-        $scope.loadWorld();
+        $scope.loadWorld('land');
         
         
         renderer = new THREE.WebGLRenderer();
@@ -88,7 +106,7 @@ angular.module('castleBioApp')
         composer.addPass( effect );
     //Spread Colors    
         effect = new THREE.ShaderPass( THREE.RGBShiftShader );
-        effect.uniforms.amount.value = 0.0125;
+        effect.uniforms.amount.value = 0.005;
         effect.renderToScreen = true;
         composer.addPass( effect );
 
@@ -134,4 +152,4 @@ angular.module('castleBioApp')
         animate();
       }
     };
-  });
+  }]);

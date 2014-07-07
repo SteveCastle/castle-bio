@@ -1,6 +1,13 @@
 
 <div ng-packery ng-repeat="work in works" class="contentWindow wide">
 	<h2>{{work.title}}</h2>
+	<div class="windowMenu">
+						<ul  class="commandList cf">
+		<h4>Available Commands</h4>
+      <li ng-show="work.gitUrl"><a href="{{work.gitUrl}}" target="_blank">gitHub Repository</a></li>
+      <li><a href="{{work.url}}" target="_blank">Live Site</a></li>
+	</ul>	
+	</div>
 	<div class="wrapper">
 	<p>{{work.description}}</p>
 	</div>

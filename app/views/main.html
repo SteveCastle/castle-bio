@@ -1,11 +1,15 @@
-<div class="contentWindow title" ng-packery>
+<div class="contentWindow title translucent" ng-packery>
 </div>
 <div class="contentWindow wide" ng-packery>
 <h2>/readme.txt</h2>
+	<ul  class="commandList cf">
+		<h4>Available Commands</h4>
+      <li ng-repeat="helpItem in helpItems"><a href="" ng-click="setCommand(helpItem.title)">{{helpItem.title}}</a></li>
+      <li><a href="#" ng-click = "setWorld('city')">world --map city</a></li>
+      <li><a href="#" ng-click = "setWorld('land')">world --map land</a></li>
+	</ul>		
 <div class="wrapper">
-<p>I am a full stack web developer working on enterprise software development professionally. This site is my way of having a little fun and playing with the experimental side of development. This site also requires webgl and is not intended for mobile devices at this time. For a conventional resume, a sample of projects I have worked on, or to get in touch please visit my github or linked in pages.</p>
-<h3>about</h3>
-<p>This site was built with angular and I wrote directives for packery.js and three.js to create the window system and 3d background.  The geometry was created by me, if you're bored try to find all the different hidden 3d worlds that are available as backgrounds. Source code is available on my github page.</p>
+	{{welcomeMessage}}
 </div>
 </div>
 
@@ -38,7 +42,6 @@
 				<li>B.S Business Administration</li>
 				<li>Accounting Specialization</li>
 			</ul>
-			<h3></h3>
 	</div>
 </div>
 
