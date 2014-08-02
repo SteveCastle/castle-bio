@@ -15,8 +15,8 @@ angular.module('castleBioApp')
      I have gathered requirements, planned, prototyped, and built a production python backend that is used by thousands of users each day. I have also used Ruby, Node, and Scala for a few smaller projects.'},
     {'title': 'Deployment', 'description': 'Capable of deploying and maintaining cloud hosting in a number of ways and have done so in production. Capable of creating High Availability AWS Depolyments or\
     deploying to most PaSS solutions.  Greatest experience is with an AWS architecture using Ubuntu application server, RDS database, and S3 storage.'},
-    {'title': 'Workflow and Tooling', 'description': 'Daily usage of git for version control, and bower, grunt, jasmine, etc to acheive an efficient dependency management, testing, and building workflow.'},
-    {'title': 'Management', 'description': 'Three years of experience managing a project team at a medium sized company.'},
+    {'title': 'Workflow and Tooling', 'description': 'Daily usage of git for version control, and bower, grunt, jasmine, etc for dependency management, testing, and build workflow.'},
+    {'title': 'Management', 'description': 'Two years of experience managing a project team at a medium sized (100-150 employees) company.'},
     {'title': 'Data Analysis', 'description': 'I scientifically analyze business performance data to make descisions.  I also use and can develop tools to automate descision making or implement machine learning to provide predictive features to applications.'},
     ];
   });
