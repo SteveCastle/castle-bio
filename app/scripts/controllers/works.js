@@ -9,11 +9,9 @@
  */
 angular.module('castleBioApp')
   .controller('WorksCtrl', ['$scope','githubService', function ($scope, githubService) {
-    githubService.user()
+    githubService.user('steveCastle')
       .success(function(data,status,headers){
-        console.log(data);
-        console.log(status);
-        console.log(headers);
+        console.log('gitHubResponse: ', data);
       });
     $scope.works =[
         {'title': 'DRSS Corporate Dashboard',
@@ -52,6 +50,14 @@ angular.module('castleBioApp')
         'tags': [],
         'description': 'Many other projects, some public on git hub and others for employers. Please ask me.',
         'gitUrl': 'https://github.com/SteveCastle'},
-
+        {'title': 'Space FX',
+        'tags': ['algorithms', 'experimental', 'javascript'],
+        'description': 'Spacefox railed flight game control demo.',
+        'url': 'http://tigerhaunt.com/spacefox',
+        'gitUrl': 'https://github.com/SteveCastle/spacefxjs'},
+        {'title': 'Others',
+        'tags': [],
+        'description': 'Many other projects, some public on git hub and others for employers. Please ask me.',
+        'gitUrl': 'https://github.com/SteveCastle'},
       ];
   }]);

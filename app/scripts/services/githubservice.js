@@ -23,6 +23,6 @@ angular.module('castleBioApp')
     };
     return {
       repo: function(repo) { return getRepo('steveCastle', repo); },
-      user: function() { return getMe('steveCastle'); },
+      user: function(user) { return getMe(user); },
     };
   }]);

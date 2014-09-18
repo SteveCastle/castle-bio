@@ -19,11 +19,10 @@ angular.module('castleBioApp')
         var windowHalfY = window.innerHeight / 2;
         var THREE = window.THREE;
         var lightingColor = new THREE.Color($scope.geoColor);
-        console.log($scope.geoColor);
+        console.log('Lighting Color: ', $scope.geoColor);
 
         $scope.$watch('geoColor', function(newValue, oldValue) {
           if(newValue !== undefined){
-            directionalLight.color.setHex( 0x444444 );
             console.log('New Value: ' + newValue + ' Old Value: '  + oldValue);
           }
         });
